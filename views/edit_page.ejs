@@ -1,0 +1,22 @@
+<!-- edit_page.ejs -->
+<header>
+    <center><h1>Edit Student Result</h1></center>
+</header>
+
+<main>
+    <form method="post" action="/update/<%= result.id %>">
+        <center>
+            <label for="task">Task:</label>
+            <input type="text" id="task" name="task" value="<%= result.task %>" required />
+            <label for="editStatus">Edit Task Status:</label>
+            <select id="editStatus" name="taskStatus">
+                <option value="Completed Task" <%= result.taskStatus === 'Completed Task' ? 'selected' : '' %>>Completed Task</option>
+                <option value="Running Task" <%= result.taskStatus === 'Running Task' ? 'selected' : '' %>>Running Task</option>
+                <option value="Pending Task" <%= result.taskStatus === 'Pending Task' ? 'selected' : '' %>>Pending Task</option>
+                <option value="Decline Task" <%= result.taskStatus === 'Decline Task' ? 'selected' : '' %>>Decline Task</option>
+            </select>
+            
+            <input type="submit" value="Submit" />
+          </center>
+    </form>
+</main>
